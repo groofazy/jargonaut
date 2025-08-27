@@ -23,11 +23,6 @@ def create_app(test_config=None): # factory function
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
-    # a simple page that says hello
-    @app.route('/')
-    def hello():
-        return 'Hello, World!'
     
     from . import db
     db.init_app(app)
@@ -38,5 +33,10 @@ def create_app(test_config=None): # factory function
     from . import blog
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
+
+        # a simple page that says hello
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
     
     return app

@@ -27,7 +27,7 @@ def test_author_required(app, client, auth):
     # change the post author to another user
     with app.app_context():
         db = get_db()
-        db.execture('UPDATE post SET author_id = 2 WHERE id = 1')
+        db.execute('UPDATE post SET author_id = 2 WHERE id = 1')
         db.commit()
 
     auth.login()

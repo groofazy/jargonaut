@@ -28,7 +28,7 @@ def app():
 
 @pytest.fixture
 def client(app):
-    return app.test_client # creates test client objects, allows HTTP rrequest simulation
+    return app.test_client() # creates test client objects, allows HTTP rrequest simulation
 
 @pytest.fixture
 def runner(app):

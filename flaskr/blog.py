@@ -29,7 +29,7 @@ def create():
         if not title:
             error = 'Title is required.'
 
-        if not error is not None:
+        if error is not None:
             flash(error)
         else:
             db = get_db()

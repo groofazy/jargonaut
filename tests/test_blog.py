@@ -55,7 +55,7 @@ def test_create(client, auth, app): # simulates logged-in user accessing /create
     with app.app_context(): # checks total number of posts in db has increased, confirming that new post was created
         db = get_db()
         count = db.execute('SELECT COUNT(id) FROM post').fetchone()[0]
-        assert count == 1 # count == 1 since db starts with 0 posts in simulation
+        assert count == 2
 
 
 def test_update(client, auth, app): # simulates logged-in user accessing /1/update page
